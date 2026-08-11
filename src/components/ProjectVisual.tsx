@@ -66,23 +66,24 @@ export function ProjectVisual({
 
   return (
     <div
-      className={`project-visual visual-noma ${compact ? "is-compact" : ""}`}
+      className={`project-visual visual-yey ${compact ? "is-compact" : ""}`}
       role="img"
-      aria-label="Noma care coordination service interface concept"
+      aria-label="Yey Digital institutional website proposal"
     >
-      <div className="noma-copy"><span>NOMA CARE</span><strong>Your care,<br />clearly shared.</strong><small>ONE PLAN / THREE PERSPECTIVES</small></div>
-      <div className="noma-phone">
-        <div className="phone-bar" />
-        <div className="noma-status"><span>Today</span><i>SX</i></div>
-        <h3>Good morning, Sara.</h3>
-        <p>Here is what matters today.</p>
-        <div className="care-task done"><i>✓</i><div><span>08:00</span><strong>Morning medication</strong></div></div>
-        <div className="care-task"><i>2</i><div><span>14:30</span><strong>Video appointment</strong></div></div>
-        <div className="care-note"><span>CARE TEAM</span><strong>Everything is up to date.</strong></div>
+      <div className="yey-grid" />
+      <div className="yey-screen">
+        <div className="yey-browser-bar"><i /><i /><i /><span>YEY DIGITAL / INSTITUCIONAL</span></div>
+        <img src="projects/yey/home.png" alt="" />
       </div>
-      <div className="noma-tag tag-one">PATIENT</div>
-      <div className="noma-tag tag-two">CAREGIVER</div>
-      <div className="noma-tag tag-three">PROFESSIONAL</div>
+      <div className="yey-brand-crop" aria-hidden="true">
+        <span>BRAND OBJECT / 01</span>
+        <img src="projects/yey/home.png" alt="" />
+      </div>
+      <div className="yey-copy-card">
+        <span>SOFTWARE HOUSE / DIGITAL PRODUCTS</span>
+        <strong>Conectando ideias,<br />criando realidades.</strong>
+      </div>
+      <div className="visual-watermark">YEY / CASE 03 / PROPOSTA NÃO IMPLEMENTADA</div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ export type ProjectCaseDetail = {
 };
 
 export type Project = {
-  slug: "chatadv" | "levite" | "noma";
+  slug: "chatadv" | "levite" | "yey";
   index: string;
   name: string;
   year: string;
@@ -36,7 +36,7 @@ export type Project = {
   quote: LocalizedText;
   metric: string;
   metricLabel: LocalizedText;
-  theme: "ink" | "blue" | "green" | "gold" | "coral";
+  theme: "ink" | "blue" | "green" | "gold" | "aqua" | "coral";
   caseDetail?: ProjectCaseDetail;
 };
 
@@ -254,63 +254,107 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "noma",
+    slug: "yey",
     index: "03",
-    name: "NOMA",
-    year: "2025",
+    name: "YEY",
+    year: "—",
+    dateLabel: { en: "Not implemented", pt: "Não implementado" },
+    kind: "client",
     category: {
-      en: "Care coordination, without the noise",
-      pt: "Coordenação de cuidado, sem ruído",
+      en: "Institutional website for a software house",
+      pt: "Site institucional para uma software house",
     },
     title: {
-      en: "A calmer way to coordinate everyday care.",
-      pt: "Uma forma mais tranquila de coordenar o cuidado diário.",
+      en: "Giving an abstract technology service a tangible brand presence.",
+      pt: "Transformando um serviço de tecnologia abstrato em uma presença de marca tangível.",
     },
     summary: {
-      en: "A healthcare service concept that connects patients, caregivers, and professionals around a simple, shared plan.",
-      pt: "Um conceito de serviço em saúde que conecta pacientes, cuidadores e profissionais em torno de um plano simples e compartilhado.",
+      en: "An institutional website proposal for Yey Digital, designed to introduce the software house through a distinctive visual language and a confident first impression.",
+      pt: "Uma proposta de site institucional para a Yey Digital, criada para apresentar a software house por meio de uma linguagem visual marcante e uma primeira impressão confiante.",
     },
-    role: { en: "Product Designer", pt: "Product Designer" },
-    duration: { en: "6 weeks", pt: "6 semanas" },
+    role: { en: "UI/UX Designer", pt: "UI/UX Designer" },
+    duration: { en: "To confirm", pt: "A confirmar" },
     tags: [
-      { en: "Service Design", pt: "Service Design" },
-      { en: "Accessibility", pt: "Acessibilidade" },
-      { en: "Prototyping", pt: "Prototipação" },
+      { en: "Institutional Website", pt: "Site Institucional" },
+      { en: "Visual Direction", pt: "Direção Visual" },
+      { en: "Interface Design", pt: "Design de Interface" },
     ],
     challenge: {
-      en: "Care plans often become fragmented across appointments, notes, and family conversations. The product needed to feel dependable for people with very different levels of digital confidence.",
-      pt: "Planos de cuidado costumam se fragmentar entre consultas, anotações e conversas familiares. O produto precisava ser confiável para pessoas com níveis muito diferentes de familiaridade digital.",
+      en: "The proposal needed to communicate technology, innovation, and capability without falling into a generic corporate aesthetic. The first screen had to make the software house feel distinctive before explaining its services in detail.",
+      pt: "A proposta precisava comunicar tecnologia, inovação e capacidade sem cair em uma estética corporativa genérica. A primeira tela deveria tornar a software house reconhecível antes mesmo de explicar seus serviços em detalhes.",
     },
     context: {
-      en: "Noma is a speculative service-design case study focused on continuity, consent, and accessible communication.",
-      pt: "Noma é um estudo de caso especulativo de service design focado em continuidade, consentimento e comunicação acessível.",
+      en: "Yey Digital is a software house. The institutional website was conceived as a digital introduction to the company and its technology positioning, but the project did not move into implementation.",
+      pt: "A Yey Digital é uma software house. O site institucional foi concebido como uma apresentação digital da empresa e de seu posicionamento em tecnologia, mas o projeto não avançou para implementação.",
     },
     insight: {
-      en: "Coordination breaks when responsibility is implied. Every task needed a visible owner, a simple status, and a shared understanding of what happens next.",
-      pt: "A coordenação falha quando a responsabilidade fica implícita. Cada tarefa precisava de responsável visível, status simples e entendimento compartilhado do que acontece depois.",
+      en: "When the service itself is invisible, the interface must make its character visible. Brand expression becomes part of how users understand what the company can create.",
+      pt: "Quando o serviço é invisível, a interface precisa tornar seu caráter visível. A expressão da marca passa a fazer parte de como as pessoas entendem o que a empresa é capaz de criar.",
     },
     decision: {
-      en: "The design centers a living care plan with explicit ownership, gentle reminders, and language that works under stress.",
-      pt: "O design é centrado em um plano de cuidado vivo, com responsabilidades explícitas, lembretes gentis e linguagem que funciona mesmo sob estresse.",
+      en: "A luminous teal gradient, a monospaced headline, generous white space, and a dimensional brand object create a balance between technical precision and visual energy.",
+      pt: "Um gradiente luminoso em verde-água, um título monoespaçado, espaços brancos generosos e um objeto de marca tridimensional equilibram precisão técnica e energia visual.",
     },
     outcome: {
-      en: "The resulting prototype prioritizes confidence over feature volume and includes accessible defaults from the first interaction.",
-      pt: "O protótipo resultante prioriza confiança em vez de volume de funcionalidades e inclui padrões acessíveis desde a primeira interação.",
+      en: "The work established a strong visual direction for Yey Digital's institutional presence. Because the website was not implemented, the case does not claim production behavior, user validation, or business metrics.",
+      pt: "O trabalho estabeleceu uma direção visual forte para a presença institucional da Yey Digital. Como o site não foi implementado, o case não atribui comportamento em produção, validação com usuários ou métricas de negócio.",
     },
     learning: {
-      en: "Designing for care means designing for the moments when attention is already limited.",
-      pt: "Projetar para o cuidado significa projetar para momentos em que a atenção já está limitada.",
+      en: "A memorable visual direction can make an intangible service easier to grasp, but its real impact can only be understood after implementation and validation.",
+      pt: "Uma direção visual memorável pode tornar um serviço intangível mais fácil de compreender, mas seu impacto real só pode ser entendido depois da implementação e validação.",
     },
     quote: {
-      en: "Good coordination makes responsibility visible and reassurance ambient.",
-      pt: "Uma boa coordenação torna a responsabilidade visível e a tranquilidade presente.",
+      en: "Connecting ideas, creating realities.",
+      pt: "Conectando ideias, criando realidades.",
     },
-    metric: "3/3",
+    metric: "CONCEPT",
     metricLabel: {
-      en: "roles aligned around the same care plan",
-      pt: "papéis alinhados em torno do mesmo plano de cuidado",
+      en: "institutional direction designed; not implemented",
+      pt: "direção institucional desenhada; sem implementação",
     },
-    theme: "coral",
+    theme: "aqua",
+    caseDetail: {
+      discoveryTitle: {
+        en: "A visual proposal awaiting its complete project record.",
+        pt: "Uma proposta visual aguardando o registro completo do processo.",
+      },
+      discoveryCopy: {
+        en: "The available material documents the objective and the high-fidelity interface direction. Research, testing, timeline, and additional process artifacts have not yet been documented for this portfolio, so the case does not present them as evidence.",
+        pt: "O material disponível documenta o objetivo e a direção de interface em alta fidelidade. Pesquisa, testes, prazo e artefatos adicionais do processo ainda não foram registrados para este portfólio; por isso, o case não os apresenta como evidência.",
+      },
+      methods: [
+        { en: "Institutional narrative", pt: "Narrativa institucional" },
+        { en: "Visual direction", pt: "Direção visual" },
+        { en: "Interface composition", pt: "Composição de interface" },
+        { en: "High-fidelity screen", pt: "Tela em alta fidelidade" },
+      ],
+      flowTitle: {
+        en: "From a distinctive first impression to a business conversation.",
+        pt: "De uma primeira impressão marcante a uma conversa de negócio.",
+      },
+      flowSteps: [
+        { en: "Meet Yey", pt: "Conhecer a Yey" },
+        { en: "Understand positioning", pt: "Entender o posicionamento" },
+        { en: "Explore capabilities", pt: "Explorar capacidades" },
+        { en: "Start a conversation", pt: "Iniciar uma conversa" },
+      ],
+      systemTitle: {
+        en: "A digital language built around depth, energy, and precision.",
+        pt: "Uma linguagem digital construída com profundidade, energia e precisão.",
+      },
+      systemCopy: {
+        en: "Layered gradients add movement and depth, while the monospaced headline signals a technical personality. Rounded controls and an oversized geometric brand element keep the composition approachable and memorable.",
+        pt: "Gradientes em camadas adicionam movimento e profundidade, enquanto o título monoespaçado comunica uma personalidade técnica. Controles arredondados e um elemento geométrico de marca em grande escala tornam a composição acessível e memorável.",
+      },
+      outcomeTitle: {
+        en: "A strong visual direction that remained at the design stage.",
+        pt: "Uma direção visual forte que permaneceu na etapa de design.",
+      },
+      note: {
+        en: "Real design proposal for Yey Digital, not implemented. No metrics, user research, or production results are claimed. Role, duration, and additional process details should be confirmed before publication.",
+        pt: "Proposta real de design para a Yey Digital, não implementada. O case não atribui métricas, pesquisa com usuários ou resultados em produção. Papel, duração e detalhes adicionais do processo devem ser confirmados antes da publicação.",
+      },
+    },
   },
 ];
 

@@ -161,10 +161,10 @@ export function CaseStudy({
         </section>
 
         <section className="system-section shell">
-          <span className="section-label mono">{project.slug === "levite" ? (locale === "pt" ? "07 — Linguagem visual" : "07 — Visual language") : t.system}</span>
+          <span className="section-label mono">{project.slug === "levite" || project.slug === "yey" ? (locale === "pt" ? "07 — Linguagem visual" : "07 — Visual language") : t.system}</span>
           <div className="case-two-col"><h2>{detail?.systemTitle[locale] ?? t.systemTitle}</h2><p>{detail?.systemCopy[locale] ?? t.systemCopy}</p></div>
           <div className="system-board">
-            <div className="type-sample"><span>TYPE / 01</span><strong>Aa</strong><small>{project.slug === "levite" ? "Editorial sans / Warm clarity" : "Geist / Product clarity"}</small></div>
+            <div className="type-sample"><span>TYPE / 01</span><strong>Aa</strong><small>{project.slug === "levite" ? "Editorial sans / Warm clarity" : project.slug === "yey" ? "Monospace display / Digital energy" : "Geist / Product clarity"}</small></div>
             <div className="color-sample"><span>COLOR / 02</span><div><i /><i /><i /><i /></div></div>
             <div className={`component-sample ${project.slug === "chatadv" ? "materialize-components" : ""}`}>
               <span>COMPONENT / 03</span>
@@ -177,8 +177,8 @@ export function CaseStudy({
                 </div>
               ) : (
                 <>
-                  <button tabIndex={-1}>{project.slug === "levite" ? (locale === "pt" ? "Agendar consulta" : "Schedule an appointment") : "Primary action"} <i>→</i></button>
-                  <button className="secondary" tabIndex={-1}>{project.slug === "levite" ? (locale === "pt" ? "Conhecer o instituto" : "Explore the institute") : "Secondary"}</button>
+                  <button tabIndex={-1}>{project.slug === "levite" ? (locale === "pt" ? "Agendar consulta" : "Schedule an appointment") : project.slug === "yey" ? (locale === "pt" ? "Conhecer soluções" : "Explore solutions") : "Primary action"} <i>→</i></button>
+                  <button className="secondary" tabIndex={-1}>{project.slug === "levite" ? (locale === "pt" ? "Conhecer o instituto" : "Explore the institute") : project.slug === "yey" ? (locale === "pt" ? "Falar com a Yey" : "Talk to Yey") : "Secondary"}</button>
                 </>
               )}
             </div>
