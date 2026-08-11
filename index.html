@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f2efe8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <script>
+      (() => {
+        const savedTheme = window.localStorage.getItem("sx-theme");
+        const theme = savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+          "content",
+          theme === "dark" ? "#11120f" : "#f4f2ed",
+        );
+      })();
+    </script>
     <meta name="description" content="Sara Xavier is a digital product designer connecting user needs, business goals, and visual clarity." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Sara Xavier — Digital Product Designer" />

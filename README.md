@@ -11,6 +11,7 @@ Bilingual product design portfolio built around visual clarity, product thinking
 - Contemporary editorial layout with a visible 12-column rhythm
 - Warm off-white, near-black, and signature coral palette
 - English and Portuguese interface
+- Light and dark themes with saved system-aware preference
 - Oversized typography, technical markers, and restrained motion
 - Three detailed, self-initiated concept case studies
 - Responsive and accessible by default

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProjectVisual } from "./components/ProjectVisual";
+import { Theme, ThemeSwitch } from "./components/ThemeSwitch";
 import { Locale, projects, ui } from "./content";
 
 function LanguageSwitch({ locale, onChange }: { locale: Locale; onChange: (locale: Locale) => void }) {
@@ -12,7 +13,13 @@ function LanguageSwitch({ locale, onChange }: { locale: Locale; onChange: (local
   );
 }
 
-export default function Home() {
+export default function Home({
+  theme,
+  onThemeChange,
+}: {
+  theme: Theme;
+  onThemeChange: (theme: Theme) => void;
+}) {
   const [locale, setLocale] = useState<Locale>("en");
   const t = ui[locale];
 
@@ -38,6 +45,7 @@ export default function Home() {
           <a href="#contact">{t.navContact}</a>
         </nav>
         <div className="header-tools">
+          <ThemeSwitch theme={theme} onChange={onThemeChange} />
           <LanguageSwitch locale={locale} onChange={changeLocale} />
           <div className="availability"><i />{t.available}</div>
         </div>

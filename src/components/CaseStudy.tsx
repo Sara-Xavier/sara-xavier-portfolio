@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Locale, Project, projects } from "../content";
 import { ProjectVisual } from "./ProjectVisual";
+import { Theme, ThemeSwitch } from "./ThemeSwitch";
 
 const labels = {
   en: {
@@ -65,7 +66,15 @@ const labels = {
   },
 } as const;
 
-export function CaseStudy({ project }: { project: Project }) {
+export function CaseStudy({
+  project,
+  theme,
+  onThemeChange,
+}: {
+  project: Project;
+  theme: Theme;
+  onThemeChange: (theme: Theme) => void;
+}) {
   const [locale, setLocale] = useState<Locale>("en");
   const t = labels[locale];
   const projectIndex = projects.findIndex((item) => item.slug === project.slug);
@@ -88,6 +97,7 @@ export function CaseStudy({ project }: { project: Project }) {
         <a href="#work" className="back-link">← {t.back}</a>
         <a href="#top" className="wordmark">SARA XAVIER<span>®</span></a>
         <div className="header-tools">
+          <ThemeSwitch theme={theme} onChange={onThemeChange} />
           <div className="language-switch" aria-label="Language / Idioma">
             <button type="button" aria-pressed={locale === "en"} onClick={() => changeLocale("en")}>EN</button><span>/</span>
             <button type="button" aria-pressed={locale === "pt"} onClick={() => changeLocale("pt")}>PT</button>
