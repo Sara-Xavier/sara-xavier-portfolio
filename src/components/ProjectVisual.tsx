@@ -36,40 +36,30 @@ export function ProjectVisual({
     );
   }
 
-  if (project.slug === "orbit") {
+  if (project.slug === "levite") {
     return (
       <div
-        className={`project-visual visual-orbit ${compact ? "is-compact" : ""}`}
+        className={`project-visual visual-levite ${compact ? "is-compact" : ""}`}
         role="img"
-        aria-label="Orbit operations analytics dashboard concept"
+        aria-label="Real screens from the Instituto Levité institutional website"
       >
-        <div className="orbit-window">
-          <aside>
-            <b>O.</b>
-            <span className="orbit-active" />
-            <span />
-            <span />
-            <span />
-          </aside>
-          <div className="orbit-main">
-            <header><span>OPERATIONS / OVERVIEW</span><b>LIVE</b></header>
-            <div className="orbit-heading"><div><small>SYSTEM PULSE</small><strong>96.4%</strong></div><button tabIndex={-1}>Last 24 hours⌄</button></div>
-            <div className="orbit-grid">
-              <div className="orbit-chart">
-                <span>THROUGHPUT</span>
-                <div className="chart-line"><i /><i /><i /><i /><i /><i /><i /><i /></div>
-                <div className="chart-axis"><span>08</span><span>12</span><span>16</span><span>20</span></div>
-              </div>
-              <div className="risk-card"><span>ATTENTION</span><strong>03</strong><small>signals need review</small></div>
-            </div>
-            <div className="incident-list">
-              <div><i /><span>Distribution center — NE</span><b>Elevated</b></div>
-              <div><i /><span>Carrier handoff latency</span><b>Watching</b></div>
-              <div><i /><span>Inventory reconciliation</span><b>Stable</b></div>
-            </div>
+        <div className="levite-grid" />
+        <div className="levite-main-screen">
+          <div className="levite-browser-bar"><i /><i /><i /><span>INSTITUTO LEVITÉ / HOME</span></div>
+          <img src="projects/levite/home.png" alt="" />
+        </div>
+        <div className="levite-detail-stack" aria-hidden="true">
+          <div><img src="projects/levite/founder.png" alt="" /></div>
+          <div className="levite-detail-pair">
+            <img src="projects/levite/institute.png" alt="" />
+            <img src="projects/levite/specialties.png" alt="" />
           </div>
         </div>
-        <div className="visual-watermark">ORBIT / 02</div>
+        <div className="levite-logo-card">
+          <img src="projects/levite/logo.png" alt="" />
+          <span>SITE INSTITUCIONAL / SAÚDE &amp; BEM-ESTAR</span>
+        </div>
+        <div className="visual-watermark">LEVITÉ / CASE 02 / TELAS REAIS</div>
       </div>
     );
   }

@@ -15,7 +15,7 @@ export type ProjectCaseDetail = {
 };
 
 export type Project = {
-  slug: "chatadv" | "orbit" | "noma";
+  slug: "chatadv" | "levite" | "noma";
   index: string;
   name: string;
   year: string;
@@ -36,7 +36,7 @@ export type Project = {
   quote: LocalizedText;
   metric: string;
   metricLabel: LocalizedText;
-  theme: "ink" | "blue" | "green" | "coral";
+  theme: "ink" | "blue" | "green" | "gold" | "coral";
   caseDetail?: ProjectCaseDetail;
 };
 
@@ -148,63 +148,110 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "orbit",
+    slug: "levite",
     index: "02",
-    name: "ORBIT",
-    year: "2026",
+    name: "LEVITÉ",
+    year: "—",
+    dateLabel: { en: "Launched", pt: "Publicado" },
+    kind: "client",
     category: {
-      en: "Operations intelligence platform",
-      pt: "Plataforma de inteligência operacional",
+      en: "Institutional health and wellbeing website",
+      pt: "Site institucional de saúde e bem-estar",
     },
     title: {
-      en: "From scattered signals to one operational picture.",
-      pt: "De sinais dispersos para uma visão operacional única.",
+      en: "A digital front door for care, trust, and appointment intent.",
+      pt: "Uma presença digital para transformar cuidado em confiança e agendamento.",
     },
     summary: {
-      en: "A B2B analytics concept that helps operations teams spot risk, align priorities, and act before small issues become expensive ones.",
-      pt: "Um conceito B2B de analytics que ajuda equipes de operações a identificar riscos, alinhar prioridades e agir antes que pequenos problemas se tornem caros.",
+      en: "An institutional website for Instituto Levité that presents the brand, founder, and specialties while creating a direct path to appointment booking via WhatsApp.",
+      pt: "Um site institucional para o Instituto Levité que apresenta a marca, a fundadora e as especialidades, criando um caminho direto para o agendamento pelo WhatsApp.",
     },
-    role: { en: "Lead Product Designer", pt: "Lead Product Designer" },
-    duration: { en: "10 weeks", pt: "10 semanas" },
+    role: {
+      en: "Independent UI/UX Designer",
+      pt: "UI/UX Designer independente",
+    },
+    duration: { en: "3 weeks", pt: "3 semanas" },
     tags: [
-      { en: "Complex Systems", pt: "Sistemas Complexos" },
-      { en: "Data Visualization", pt: "Visualização de Dados" },
-      { en: "Design System", pt: "Design System" },
+      { en: "Information Architecture", pt: "Arquitetura da Informação" },
+      { en: "Interface Design", pt: "Design de Interface" },
+      { en: "Conversion Path", pt: "Jornada de Conversão" },
     ],
     challenge: {
-      en: "Operational teams were switching between reports, messages, and spreadsheets to understand the same incident. Information existed, but shared context did not.",
-      pt: "Times de operações alternavam entre relatórios, mensagens e planilhas para entender o mesmo incidente. A informação existia, mas o contexto compartilhado não.",
+      en: "With a three-week timeline and no direct access to users or research, the challenge was to turn the institute's available content into a credible, welcoming, and easy-to-navigate experience—without following the implementation phase.",
+      pt: "Com um prazo de três semanas e sem acesso direto a usuários ou pesquisa, o desafio foi transformar o conteúdo disponível do instituto em uma experiência confiável, acolhedora e fácil de navegar — sem acompanhar a etapa de implementação.",
     },
     context: {
-      en: "Orbit is a demonstration project exploring how dense operational data can support faster, more accountable decisions.",
-      pt: "Orbit é um projeto demonstrativo que explora como dados operacionais densos podem apoiar decisões mais rápidas e responsáveis.",
+      en: "Instituto Levité needed its first institutional website: a central place to explain its approach, introduce the team and specialties, and give prospective patients a clear way to get in touch.",
+      pt: "O Instituto Levité precisava de seu primeiro site institucional: um espaço central para apresentar sua abordagem, sua equipe e suas especialidades, além de oferecer a potenciais pacientes uma forma clara de entrar em contato.",
     },
     insight: {
-      en: "Experts read anomalies before totals. A useful overview had to foreground change, ownership, and urgency instead of decorating aggregate numbers.",
-      pt: "Especialistas percebem anomalias antes dos totais. Uma visão geral útil precisava priorizar mudança, responsabilidade e urgência, em vez de apenas decorar números agregados.",
+      en: "For a healthcare institution, trust is the first conversion step. Before asking someone to schedule, the website had to make the institute feel credible, present, and human.",
+      pt: "Para uma instituição de saúde, confiança é o primeiro passo da conversão. Antes de pedir um agendamento, o site precisava fazer o instituto parecer confiável, presente e humano.",
     },
     decision: {
-      en: "A layered workspace connects system health, exceptions, responsible teams, and the full event trail without forcing users into separate modules.",
-      pt: "Um workspace em camadas conecta saúde do sistema, exceções, equipes responsáveis e todo o histórico de eventos sem forçar o uso de módulos separados.",
+      en: "The interface combines warm photography, a restrained gold-and-black palette, large editorial headlines, and repeated WhatsApp calls to action so users can understand the institute before starting a conversation.",
+      pt: "A interface combina fotografias acolhedoras, uma paleta contida de dourado e preto, títulos editoriais amplos e chamadas recorrentes para o WhatsApp, permitindo que as pessoas conheçam o instituto antes de iniciar uma conversa.",
     },
     outcome: {
-      en: "The prototype established a reusable information model and a compact component language for dashboards, incident views, and team handoffs.",
-      pt: "O protótipo estabeleceu um modelo de informação reutilizável e uma linguagem compacta de componentes para dashboards, incidentes e passagens entre equipes.",
+      en: "The launched website gave Instituto Levité the institutional presence it previously lacked and established a direct route from discovery to appointment contact. No post-launch performance metrics were provided.",
+      pt: "O site publicado deu ao Instituto Levité a presença institucional que ainda não possuía e estabeleceu um caminho direto entre descoberta e contato para agendamento. Não foram fornecidas métricas de desempenho pós-lançamento.",
     },
     learning: {
-      en: "In complex products, hierarchy is a form of functionality.",
-      pt: "Em produtos complexos, hierarquia é uma forma de funcionalidade.",
+      en: "When research access is limited, hierarchy, transparency, and low-friction contact become hypotheses that should remain visible—and be validated after launch.",
+      pt: "Quando o acesso à pesquisa é limitado, hierarquia, transparência e contato sem atrito se tornam hipóteses que precisam permanecer visíveis — e ser validadas após o lançamento.",
     },
     quote: {
-      en: "A dashboard should reveal a decision, not merely display a dataset.",
-      pt: "Um dashboard deve revelar uma decisão, não apenas exibir um conjunto de dados.",
+      en: "Before asking someone to schedule, the experience had to make care feel credible and close.",
+      pt: "Antes de pedir um agendamento, a experiência precisava fazer o cuidado parecer confiável e próximo.",
     },
-    metric: "4→1",
+    metric: "LIVE",
     metricLabel: {
-      en: "disconnected tools reframed as one decision surface",
-      pt: "ferramentas desconectadas reorganizadas em uma superfície de decisão",
+      en: "launched institutional presence with a direct WhatsApp appointment path",
+      pt: "presença institucional publicada com caminho direto para agendamento pelo WhatsApp",
     },
-    theme: "blue",
+    theme: "gold",
+    caseDetail: {
+      discoveryTitle: {
+        en: "A lean process shaped by the information available.",
+        pt: "Um processo enxuto, construído a partir das informações disponíveis.",
+      },
+      discoveryCopy: {
+        en: "Because direct user research was not possible, the work focused on organizing the institute's existing content, clarifying the page hierarchy, and turning business priorities into a concise institutional journey. The lack of research is treated as a project constraint, not as evidence.",
+        pt: "Como não foi possível realizar pesquisa direta com usuários, o trabalho se concentrou em organizar o conteúdo existente do instituto, esclarecer a hierarquia das páginas e transformar prioridades do negócio em uma jornada institucional concisa. A ausência de pesquisa é apresentada como uma restrição do projeto, não como evidência.",
+      },
+      methods: [
+        { en: "Business brief", pt: "Briefing do negócio" },
+        { en: "Content architecture", pt: "Arquitetura de conteúdo" },
+        { en: "Interface design", pt: "Design de interface" },
+        { en: "Client handoff", pt: "Entrega ao cliente" },
+      ],
+      flowTitle: {
+        en: "From first impression to a direct conversation.",
+        pt: "Da primeira impressão a uma conversa direta.",
+      },
+      flowSteps: [
+        { en: "Discover institute", pt: "Conhecer o instituto" },
+        { en: "Build trust", pt: "Construir confiança" },
+        { en: "Explore specialties", pt: "Explorar especialidades" },
+        { en: "Schedule via WhatsApp", pt: "Agendar pelo WhatsApp" },
+      ],
+      systemTitle: {
+        en: "A warm visual language for clinical credibility.",
+        pt: "Uma linguagem visual acolhedora para transmitir credibilidade clínica.",
+      },
+      systemCopy: {
+        en: "Gold accents, black typography, generous white space, and large-format photography create a balance between authority and warmth. Repeated card and call-to-action patterns keep the experience coherent across the site.",
+        pt: "Acentos dourados, tipografia preta, espaços brancos generosos e fotografias em grande formato equilibram autoridade e acolhimento. Padrões recorrentes de cards e chamadas para ação mantêm a experiência coerente em todo o site.",
+      },
+      outcomeTitle: {
+        en: "A launched digital presence where none existed.",
+        pt: "Uma presença digital publicada onde antes não existia.",
+      },
+      note: {
+        en: "Real client project, launched. Sara was responsible for the UI/UX design as an external contractor and did not accompany implementation. No user research or post-launch metrics are claimed. The images shown are real screens from the delivered website.",
+        pt: "Projeto real para cliente, já publicado. Sara foi responsável pelo UI/UX design como profissional contratada externamente e não acompanhou a implementação. O case não atribui pesquisa com usuários nem métricas pós-lançamento. As imagens exibidas são telas reais do site entregue.",
+      },
+    },
   },
   {
     slug: "noma",
@@ -283,7 +330,7 @@ export const ui = {
     scroll: "Selected work",
     selectedEyebrow: "01 — Selected work",
     selectedTitle: "Projects where clarity became the product.",
-    clientWork: "Client project — pre-launch",
+    clientWork: "Client project",
     demoNote: "Self-initiated concept",
     viewCase: "View case study",
     approachEyebrow: "02 — Approach",
@@ -332,7 +379,7 @@ export const ui = {
     scroll: "Projetos selecionados",
     selectedEyebrow: "01 — Projetos selecionados",
     selectedTitle: "Projetos em que clareza virou produto.",
-    clientWork: "Projeto para cliente — pré-lançamento",
+    clientWork: "Projeto para cliente",
     demoNote: "Conceito autoral",
     viewCase: "Ver estudo de caso",
     approachEyebrow: "02 — Abordagem",
