@@ -58,7 +58,6 @@ export default function Home({
           <p>{t.heroSupport}</p>
           <a href="#work" className="down-link"><span>{t.scroll}</span><i>↓</i></a>
         </div>
-        <div className="coordinate mono">05°47′S / 35°12′W</div>
       </section>
 
       <section className="work-section shell" id="work" aria-labelledby="work-title">
