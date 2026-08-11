@@ -220,7 +220,7 @@ export const ui = {
       "I connect user needs, business goals, and visual clarity to shape useful digital products.",
     scroll: "Selected work",
     selectedEyebrow: "01 — Selected work",
-    selectedTitle: "A few problems worth solving well.",
+    selectedTitle: "Projects where clarity became the product.",
     demoNote: "Self-initiated concept",
     viewCase: "View case study",
     approachEyebrow: "02 — Approach",
