@@ -268,7 +268,7 @@ export const ui = {
       "Conecto necessidades de pessoas, objetivos de negócio e clareza visual para criar produtos digitais úteis.",
     scroll: "Projetos selecionados",
     selectedEyebrow: "01 — Projetos selecionados",
-    selectedTitle: "Alguns problemas que valem ser bem resolvidos.",
+    selectedTitle: "Projetos em que clareza virou produto.",
     demoNote: "Conceito autoral",
     viewCase: "Ver estudo de caso",
     approachEyebrow: "02 — Abordagem",
