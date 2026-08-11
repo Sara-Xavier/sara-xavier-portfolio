@@ -7,6 +7,7 @@ const labels = {
   en: {
     back: "Back to work",
     available: "Available for work",
+    client: "Client project — pre-launch",
     concept: "Portfolio concept — demonstration data",
     overview: "Project overview",
     role: "Role",
@@ -37,6 +38,7 @@ const labels = {
   pt: {
     back: "Voltar aos projetos",
     available: "Disponível para trabalho",
+    client: "Projeto para cliente — pré-lançamento",
     concept: "Conceito de portfólio — dados demonstrativos",
     overview: "Visão geral do projeto",
     role: "Papel",
@@ -77,6 +79,7 @@ export function CaseStudy({
 }) {
   const [locale, setLocale] = useState<Locale>("en");
   const t = labels[locale];
+  const detail = project.caseDetail;
   const projectIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(projectIndex + 1) % projects.length];
 
@@ -108,8 +111,8 @@ export function CaseStudy({
 
       <article>
         <section className="case-hero shell">
-          <div className="case-kicker mono"><span>[SX.{project.index}]</span><span>{project.category[locale]}</span><span>{project.year}</span></div>
-          <span className="demo-pill">{t.concept}</span>
+          <div className="case-kicker mono"><span>[SX.{project.index}]</span><span>{project.category[locale]}</span><span>{project.dateLabel?.[locale] ?? project.year}</span></div>
+          <span className="demo-pill">{project.kind === "client" ? t.client : t.concept}</span>
           <h1>{project.title[locale]}</h1>
           <p>{project.summary[locale]}</p>
         </section>
@@ -134,8 +137,8 @@ export function CaseStudy({
 
         <section className="discovery-section shell">
           <span className="section-label mono">{t.discovery}</span>
-          <div className="case-two-col"><h2>{t.discoveryTitle}</h2><p>{t.discoveryCopy}</p></div>
-          <div className="method-grid">{t.methods.map((method, index) => <div key={method}><span className="mono">0{index + 1}</span><strong>{method}</strong></div>)}</div>
+          <div className="case-two-col"><h2>{detail?.discoveryTitle[locale] ?? t.discoveryTitle}</h2><p>{detail?.discoveryCopy[locale] ?? t.discoveryCopy}</p></div>
+          <div className="method-grid">{(detail?.methods.map((method) => method[locale]) ?? t.methods).map((method, index) => <div key={method}><span className="mono">0{index + 1}</span><strong>{method}</strong></div>)}</div>
         </section>
 
         <section className="insight-section">
@@ -151,19 +154,31 @@ export function CaseStudy({
         </section>
 
         <section className="flow-section shell-wide">
-          <div className="shell flow-head"><span className="section-label mono">{t.flow}</span><h2>{t.flowTitle}</h2></div>
+          <div className="shell flow-head"><span className="section-label mono">{t.flow}</span><h2>{detail?.flowTitle[locale] ?? t.flowTitle}</h2></div>
           <div className="flow-diagram shell">
-            {t.flowSteps.map((step, index) => <div key={step}><span className="mono">0{index + 1}</span><strong>{step}</strong>{index < t.flowSteps.length - 1 && <i>→</i>}</div>)}
+            {(detail?.flowSteps.map((step) => step[locale]) ?? t.flowSteps).map((step, index, steps) => <div key={step}><span className="mono">0{index + 1}</span><strong>{step}</strong>{index < steps.length - 1 && <i>→</i>}</div>)}
           </div>
         </section>
 
         <section className="system-section shell">
           <span className="section-label mono">{t.system}</span>
-          <div className="case-two-col"><h2>{t.systemTitle}</h2><p>{t.systemCopy}</p></div>
+          <div className="case-two-col"><h2>{detail?.systemTitle[locale] ?? t.systemTitle}</h2><p>{detail?.systemCopy[locale] ?? t.systemCopy}</p></div>
           <div className="system-board">
             <div className="type-sample"><span>TYPE / 01</span><strong>Aa</strong><small>Geist / Product clarity</small></div>
             <div className="color-sample"><span>COLOR / 02</span><div><i /><i /><i /><i /></div></div>
-            <div className="component-sample"><span>COMPONENT / 03</span><button tabIndex={-1}>Primary action <i>→</i></button><button className="secondary" tabIndex={-1}>Secondary</button></div>
+            <div className={`component-sample ${project.slug === "chatadv" ? "materialize-components" : ""}`}>
+              <span>COMPONENT / 03</span>
+              {project.slug === "chatadv" ? (
+                <div className="materialize-showcase" aria-hidden="true">
+                  <button className="mat-button mat-raised" tabIndex={-1}><i>＋</i>{locale === "pt" ? "Criar documento" : "Create document"}</button>
+                  <button className="mat-button mat-fab" tabIndex={-1}>＋</button>
+                  <button className="mat-button mat-flat" tabIndex={-1}>{locale === "pt" ? "Ver histórico" : "View history"}</button>
+                  <small>RAISED / FLAT / FLOATING</small>
+                </div>
+              ) : (
+                <><button tabIndex={-1}>Primary action <i>→</i></button><button className="secondary" tabIndex={-1}>Secondary</button></>
+              )}
+            </div>
           </div>
         </section>
 
@@ -174,10 +189,10 @@ export function CaseStudy({
 
         <section className="outcome-section shell">
           <span className="section-label mono">{t.outcome}</span>
-          <div className="outcome-grid"><div><strong>{project.metric}</strong><span>{project.metricLabel[locale]}</span></div><div><h2>{t.outcomeTitle}</h2><p>{project.outcome[locale]}</p></div></div>
+          <div className="outcome-grid"><div><strong>{project.metric}</strong><span>{project.metricLabel[locale]}</span></div><div><h2>{detail?.outcomeTitle[locale] ?? t.outcomeTitle}</h2><p>{project.outcome[locale]}</p></div></div>
         </section>
 
-        <section className="learning-section shell"><span className="section-label mono">{t.learning}</span><p>{project.learning[locale]}</p><small>{t.note}</small></section>
+        <section className="learning-section shell"><span className="section-label mono">{t.learning}</span><p>{project.learning[locale]}</p><small>{detail?.note[locale] ?? t.note}</small></section>
 
         <section className="next-project">
           <a href={`#/work/${nextProject.slug}`} className="shell"><span className="mono">{t.next} / {nextProject.index}</span><strong>{nextProject.name}</strong><i>↗</i></a>

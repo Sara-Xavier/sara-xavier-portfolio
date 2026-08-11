@@ -71,10 +71,10 @@ export default function Home({
               <div className="project-meta mono">
                 <span>[SX.{project.index}]</span>
                 <span>{project.category[locale]}</span>
-                <span>{project.year}</span>
+                <span>{project.dateLabel?.[locale] ?? project.year}</span>
               </div>
               <div className="project-heading">
-                <div><span className="demo-pill">{t.demoNote}</span><h3>{project.name}</h3></div>
+                <div><span className="demo-pill">{project.kind === "client" ? t.clientWork : t.demoNote}</span><h3>{project.name}</h3></div>
                 <p>{project.summary[locale]}</p>
               </div>
               <a href={`#/work/${project.slug}`} className="project-link" aria-label={`${t.viewCase}: ${project.name}`}>

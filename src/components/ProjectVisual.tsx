@@ -7,35 +7,31 @@ export function ProjectVisual({
   project: Project;
   compact?: boolean;
 }) {
-  if (project.slug === "luma") {
+  if (project.slug === "chatadv") {
     return (
       <div
-        className={`project-visual visual-luma ${compact ? "is-compact" : ""}`}
+        className={`project-visual visual-chatadv ${compact ? "is-compact" : ""}`}
         role="img"
-        aria-label="Luma personal finance mobile interface concept"
+        aria-label="ChatADV dashboard interface, a legal AI workspace"
       >
-        <div className="visual-watermark">LUMA / 01</div>
-        <div className="phone phone-back">
-          <div className="phone-bar" />
-          <span className="ui-kicker">WEEKLY PULSE</span>
-          <strong>Everything is on track.</strong>
-          <div className="pulse-ring"><span>82</span></div>
-          <div className="mini-row"><i /><i /><i /><i /></div>
-        </div>
-        <div className="phone phone-front">
-          <div className="phone-bar" />
-          <div className="avatar-row"><span>SX</span><i /></div>
-          <p>Good morning, Sara</p>
-          <strong className="balance">R$ 4,820</strong>
-          <small>SAFE TO USE THIS MONTH</small>
-          <div className="luma-card">
-            <span>Next best step</span>
-            <strong>Move R$ 240 to your goal</strong>
-            <button tabIndex={-1}>Review →</button>
+        <div className="chatadv-grid" />
+        <div className="chatadv-real-stage">
+          <aside className="chatadv-brand-panel">
+            <img src="projects/chatadv/logo.png" alt="" />
+            <span>PLATAFORMA SAAS PARA ADVOCACIA</span>
+            <strong>Ferramentas jurídicas reunidas em um só workspace.</strong>
+            <div>
+              <small>IA JURÍDICA</small>
+              <small>PRODUTIVIDADE</small>
+              <small>AUTOMAÇÃO</small>
+            </div>
+          </aside>
+          <div className="chatadv-screen-shell">
+            <div className="chatadv-browser-bar"><i /><i /><i /><span>CHATADV / DASHBOARD</span></div>
+            <img src="projects/chatadv/dashboard.png" alt="" />
           </div>
-          <div className="transaction"><i /><span>Home</span><b>42%</b></div>
-          <div className="transaction"><i /><span>Everyday</span><b>31%</b></div>
         </div>
+        <div className="visual-watermark">CHATADV / CASE 01 / INTERFACE REAL</div>
       </div>
     );
   }

@@ -2,11 +2,25 @@ export type Locale = "en" | "pt";
 
 export type LocalizedText = Record<Locale, string>;
 
+export type ProjectCaseDetail = {
+  discoveryTitle: LocalizedText;
+  discoveryCopy: LocalizedText;
+  methods: LocalizedText[];
+  flowTitle: LocalizedText;
+  flowSteps: LocalizedText[];
+  systemTitle: LocalizedText;
+  systemCopy: LocalizedText;
+  outcomeTitle: LocalizedText;
+  note: LocalizedText;
+};
+
 export type Project = {
-  slug: "luma" | "orbit" | "noma";
+  slug: "chatadv" | "orbit" | "noma";
   index: string;
   name: string;
   year: string;
+  dateLabel?: LocalizedText;
+  kind?: "client" | "concept";
   category: LocalizedText;
   title: LocalizedText;
   summary: LocalizedText;
@@ -22,68 +36,116 @@ export type Project = {
   quote: LocalizedText;
   metric: string;
   metricLabel: LocalizedText;
-  theme: "ink" | "blue" | "coral";
+  theme: "ink" | "blue" | "green" | "coral";
+  caseDetail?: ProjectCaseDetail;
 };
 
 export const projects: Project[] = [
   {
-    slug: "luma",
+    slug: "chatadv",
     index: "01",
-    name: "LUMA",
-    year: "2026",
+    name: "ChatADV",
+    year: "—",
+    dateLabel: { en: "Pre-launch", pt: "Pré-lançamento" },
+    kind: "client",
     category: {
-      en: "Personal finance, made legible",
-      pt: "Finanças pessoais mais compreensíveis",
+      en: "AI workspace for legal teams",
+      pt: "Workspace com IA para equipes jurídicas",
     },
     title: {
-      en: "Turning financial anxiety into clear next steps.",
-      pt: "Transformando ansiedade financeira em próximos passos claros.",
+      en: "One legal workspace. Less time lost between tools.",
+      pt: "Um só workspace jurídico. Menos tempo perdido entre ferramentas.",
     },
     summary: {
-      en: "A mobile finance concept that helps young professionals understand their money without spreadsheets, jargon, or judgment.",
-      pt: "Um conceito mobile de finanças que ajuda jovens profissionais a entender o próprio dinheiro sem planilhas, jargões ou julgamentos.",
+      en: "An end-to-end interface redesign for an AI SaaS platform that brings legal drafting, case-law research, transcription, and text review into one system.",
+      pt: "Uma reestruturação completa da interface de uma plataforma SaaS com IA que reúne redação jurídica, pesquisa de jurisprudência, transcrição e revisão de textos em um único sistema.",
     },
-    role: { en: "Product Designer", pt: "Product Designer" },
-    duration: { en: "8 weeks", pt: "8 semanas" },
+    role: {
+      en: "Product Designer — two-person design team",
+      pt: "Product Designer — equipe de design com duas pessoas",
+    },
+    duration: { en: "4 months", pt: "4 meses" },
     tags: [
       { en: "UX Research", pt: "Pesquisa UX" },
-      { en: "Product Strategy", pt: "Estratégia de Produto" },
-      { en: "UI Design", pt: "UI Design" },
+      { en: "Information Architecture", pt: "Arquitetura da Informação" },
+      { en: "Interface Design", pt: "Design de Interface" },
     ],
     challenge: {
-      en: "Financial apps show plenty of data but rarely explain what deserves attention now. The challenge was to create confidence without oversimplifying the reality of someone's finances.",
-      pt: "Aplicativos financeiros mostram muitos dados, mas raramente explicam o que merece atenção agora. O desafio era gerar confiança sem simplificar demais a realidade financeira de alguém.",
+      en: "The project required restructuring the entire platform while a two-person design team stayed ahead of development. A broad set of advanced tools had to feel connected, understandable, and feasible under tight time and technical constraints.",
+      pt: "O projeto exigia reestruturar toda a plataforma enquanto uma equipe de design com duas pessoas trabalhava à frente do desenvolvimento. Um conjunto amplo de ferramentas avançadas precisava parecer conectado, compreensível e viável diante de restrições de prazo e tecnologia.",
     },
     context: {
-      en: "Luma is a self-initiated portfolio concept for people managing variable income, recurring bills, and short-term goals in the same place.",
-      pt: "Luma é um conceito autoral de portfólio para pessoas que administram renda variável, contas recorrentes e objetivos de curto prazo no mesmo lugar.",
+      en: "ChatADV brings together SaaS tools designed to save time in legal practice. Its features include AI-assisted legal drafting, case-law research, audio transcription, and text review for an audience composed mainly of lawyers over 35.",
+      pt: "O ChatADV reúne ferramentas SaaS criadas para economizar tempo na prática jurídica. Entre os recursos estão redação de documentos com IA, pesquisa de jurisprudência, transcrição de áudios e revisão de textos para um público formado principalmente por advogados com mais de 35 anos.",
     },
     insight: {
-      en: "People did not need another dashboard. They needed a calm answer to three questions: what changed, what is safe to spend, and what should happen next.",
-      pt: "As pessoas não precisavam de outro dashboard. Precisavam de respostas tranquilas para três perguntas: o que mudou, quanto é seguro gastar e qual deve ser o próximo passo.",
+      en: "AI was not the experience. The real experience began with a familiar legal task and ended with a result ready to be reviewed.",
+      pt: "A IA não era a experiência. A experiência começava em uma tarefa jurídica reconhecível e terminava em um resultado pronto para ser revisado.",
     },
     decision: {
-      en: "The experience was organized around a weekly pulse, with progressive detail and plain-language explanations available only when useful.",
-      pt: "A experiência foi organizada em torno de um pulso semanal, com detalhes progressivos e explicações em linguagem simples apenas quando úteis.",
+      en: "We organized the interface around recognizable jobs—draft, research, transcribe, and review—then used shared patterns and progressive guidance to make every tool feel part of the same product.",
+      pt: "Organizamos a interface em torno de tarefas reconhecíveis — redigir, pesquisar, transcrever e revisar — e usamos padrões compartilhados e orientação progressiva para fazer cada ferramenta parecer parte do mesmo produto.",
     },
     outcome: {
-      en: "The concept reduced the primary journey from seven competing actions to one guided review, giving every screen a clear job.",
-      pt: "O conceito reduziu a jornada principal de sete ações concorrentes para uma revisão guiada, dando a cada tela uma função clara.",
+      en: "Because the product has not launched, the case does not claim performance metrics. The prototype was reviewed in usability sessions with the CEO and through early beta access, creating a clearer foundation for implementation and future validation.",
+      pt: "Como o produto ainda não foi lançado, o case não apresenta métricas de desempenho. O protótipo foi revisado em testes de usabilidade com o CEO e por meio de acessos beta, criando uma base mais clara para implementação e validações futuras.",
     },
     learning: {
-      en: "Clarity is not the absence of information. It is the careful sequencing of it.",
-      pt: "Clareza não é ausência de informação. É a organização cuidadosa da sequência em que ela aparece.",
+      en: "Designing under pressure reinforced that speed does not come from skipping structure. It comes from making decisions reusable.",
+      pt: "Projetar sob pressão reforçou que velocidade não vem de pular a estrutura. Ela vem de tornar as decisões reutilizáveis.",
     },
     quote: {
-      en: "Make the next decision feel smaller than the problem.",
-      pt: "Faça a próxima decisão parecer menor do que o problema.",
+      en: "Every feature had to save time before asking users to learn a new way of working.",
+      pt: "Cada recurso precisava economizar tempo antes de pedir que o usuário aprendesse uma nova forma de trabalhar.",
     },
-    metric: "07→01",
+    metric: "BETA",
     metricLabel: {
-      en: "competing actions consolidated into one guided flow",
-      pt: "ações concorrentes reunidas em um único fluxo guiado",
+      en: "pre-launch validation with the CEO and early users",
+      pt: "validação pré-lançamento com o CEO e usuários iniciais",
     },
-    theme: "ink",
+    theme: "green",
+    caseDetail: {
+      discoveryTitle: {
+        en: "Research that kept pace with delivery.",
+        pt: "Pesquisa que acompanhou o ritmo da entrega.",
+      },
+      discoveryCopy: {
+        en: "We combined interviews, competitive analysis, journey mapping, and beta validation. Instead of treating discovery as a separate phase, findings were organized in Scrum cycles and translated into decisions alongside the evolving product.",
+        pt: "Combinamos entrevistas, análise de concorrentes, mapeamento de jornadas e validações beta. Em vez de tratar a descoberta como uma fase isolada, organizamos os aprendizados em ciclos de Scrum e os transformamos em decisões junto à evolução do produto.",
+      },
+      methods: [
+        { en: "User interviews", pt: "Entrevistas com usuários" },
+        { en: "Competitive analysis", pt: "Análise de concorrentes" },
+        { en: "Journeys and flows", pt: "Jornadas e fluxos" },
+        { en: "Usability validation", pt: "Validação de usabilidade" },
+      ],
+      flowTitle: {
+        en: "From a legal task to a result ready for review.",
+        pt: "De uma tarefa jurídica a um resultado pronto para revisão.",
+      },
+      flowSteps: [
+        { en: "Choose task", pt: "Escolher tarefa" },
+        { en: "Provide context", pt: "Informar contexto" },
+        { en: "Generate result", pt: "Gerar resultado" },
+        { en: "Review and refine", pt: "Revisar e refinar" },
+      ],
+      systemTitle: {
+        en: "Consistency became a way to move faster.",
+        pt: "Consistência virou uma forma de avançar mais rápido.",
+      },
+      systemCopy: {
+        en: "Reusable components and shared interaction rules helped the two-person design team protect coherence while working ahead of development and adapting to feedback.",
+        pt: "Componentes reutilizáveis e regras de interação compartilhadas ajudaram a equipe de duas pessoas a preservar a coerência enquanto trabalhava à frente do desenvolvimento e incorporava feedbacks.",
+      },
+      outcomeTitle: {
+        en: "A validated direction, ready to support development.",
+        pt: "Uma direção validada, pronta para apoiar o desenvolvimento.",
+      },
+      note: {
+        en: "Real client project, currently pre-launch. No post-release metrics are claimed. The interface shown is an active ChatADV product screen and may evolve before launch.",
+        pt: "Projeto real para cliente, atualmente em pré-lançamento. Nenhuma métrica pós-lançamento é atribuída ao case. A interface exibida é uma tela ativa do produto ChatADV e pode evoluir antes do lançamento.",
+      },
+    },
   },
   {
     slug: "orbit",
@@ -221,6 +283,7 @@ export const ui = {
     scroll: "Selected work",
     selectedEyebrow: "01 — Selected work",
     selectedTitle: "Projects where clarity became the product.",
+    clientWork: "Client project — pre-launch",
     demoNote: "Self-initiated concept",
     viewCase: "View case study",
     approachEyebrow: "02 — Approach",
@@ -269,6 +332,7 @@ export const ui = {
     scroll: "Projetos selecionados",
     selectedEyebrow: "01 — Projetos selecionados",
     selectedTitle: "Projetos em que clareza virou produto.",
+    clientWork: "Projeto para cliente — pré-lançamento",
     demoNote: "Conceito autoral",
     viewCase: "Ver estudo de caso",
     approachEyebrow: "02 — Abordagem",
