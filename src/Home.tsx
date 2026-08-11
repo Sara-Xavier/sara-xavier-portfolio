@@ -124,7 +124,20 @@ export default function Home({
         <div className="shell">
           <span className="section-label mono">{t.footerEyebrow}</span>
           <h2><span>{t.footerTitleA}</span><span className="accent">{t.footerTitleB}</span></h2>
-          <div className="contact-row"><span>{t.contactSoon}</span><span>LINKEDIN</span><span>BEHANCE</span></div>
+          <div className="contact-row">
+            <a href="mailto:saraaxavierrr@gmail.com" aria-label="Email Sara Xavier">
+              <small>EMAIL</small><strong>saraaxavierrr@gmail.com</strong><i>↗</i>
+            </a>
+            <a href="https://wa.me/5584981276818" target="_blank" rel="noreferrer" aria-label="WhatsApp Sara Xavier">
+              <small>WHATSAPP</small><strong>+55 84 98127-6818</strong><i>↗</i>
+            </a>
+            <a href="https://www.linkedin.com/in/sara-xavier-2b33041a2/" target="_blank" rel="noreferrer" aria-label="LinkedIn Sara Xavier">
+              <small>SOCIAL</small><strong>LINKEDIN</strong><i>↗</i>
+            </a>
+            <a href="https://www.behance.net/saraaxavierrr" target="_blank" rel="noreferrer" aria-label="Behance Sara Xavier">
+              <small>PORTFOLIO</small><strong>BEHANCE</strong><i>↗</i>
+            </a>
+          </div>
           <div className="footer-bottom mono"><span>{t.rights}</span><span>PRODUCT / UI UX DESIGN</span><a href="#top">BACK TO TOP ↑</a></div>
         </div>
       </footer>
